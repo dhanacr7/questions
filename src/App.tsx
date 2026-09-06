@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Users, FileText, Link as LinkIcon, Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Users, Link as LinkIcon, Sun, Moon } from 'lucide-react';
 import './index.css';
 
 const qaData = [
