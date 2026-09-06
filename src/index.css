@@ -200,6 +200,12 @@ body {
   line-height: 1.5;
 }
 
+.answer-text strong {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline;
+}
+
 /* Separator Line */
 .qa-separator {
   height: 1px;
