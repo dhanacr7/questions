@@ -5,15 +5,6 @@ import './index.css';
 const qaData = [
   {
     id: 1,
-    question: "Wi-Fi Aware is not actually a mesh protocol. Then why are you calling your system Urban Swarm Mesh?",
-    answer: <>Wi-Fi Aware provides <strong>peer discovery</strong> and <strong>direct P2P communication</strong>. Our application layer implements the <strong>mesh behaviour</strong>—peer selection, forwarding, deduplication, store-carry-forward, and gateway selection.</>,
-    docs: [
-      { name: "Android Developers — Wi-Fi Aware", link: "https://developer.android.com/develop/connectivity/wifi/wifi-aware" },
-      { name: "IETF RFC 9171 — Bundle Protocol / DTN", link: "https://www.rfc-editor.org/rfc/rfc9171.html" }
-    ]
-  },
-  {
-    id: 2,
     question: "What happens when two buses moving in opposite directions have only a few seconds of contact?",
     answer: <>We do not transfer continuous video. We transfer a <strong>compact event packet</strong> containing event ID, GPS, timestamp, confidence, type, and optional compressed evidence, so useful information can be exchanged during <strong>short encounters</strong>.</>,
     docs: [
@@ -22,7 +13,7 @@ const qaData = [
     ]
   },
   {
-    id: 3,
+    id: 2,
     question: "How do you select which bus should receive or forward an event?",
     answer: <>Peer selection can consider <strong>connectivity status</strong>, <strong>signal quality</strong>, <strong>route direction</strong>, <strong>event freshness</strong>, and whether the peer already has the event. A better-connected node can act as a <strong>temporary gateway</strong>.</>,
     docs: [
@@ -30,7 +21,7 @@ const qaData = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     question: "How do you prevent the same event from being forwarded repeatedly between buses?",
     answer: <>Every event receives a <strong>unique event ID and timestamp</strong>. Nodes maintain a <strong>local cache</strong> of recently seen IDs and <strong>reject duplicate packets</strong> before forwarding.</>,
     docs: [
@@ -38,7 +29,7 @@ const qaData = [
     ]
   },
   {
-    id: 5,
+    id: 4,
     question: "Why Raspberry Pi instead of ESP32 for the main processing?",
     answer: <><strong>ESP32</strong> is suitable for IMU, GPS, telemetry and <strong>lightweight embedded sensing</strong>. <strong>Raspberry Pi</strong> provides substantially more compute and a <strong>Linux environment</strong> for YOLO, OpenCV, OCR and video processing.</>,
     docs: [
@@ -47,7 +38,7 @@ const qaData = [
     ]
   },
   {
-    id: 6,
+    id: 5,
     question: "Why not directly use NVIDIA Jetson instead of Raspberry Pi?",
     answer: <>Raspberry Pi gives us a <strong>cost-effective prototype</strong> platform. Jetson Orin Nano is more appropriate when <strong>higher FPS</strong>, multiple camera feeds, and <strong>TensorRT-accelerated production inference</strong> are required.</>,
     docs: [
@@ -56,7 +47,7 @@ const qaData = [
     ]
   },
   {
-    id: 7,
+    id: 6,
     question: "How will you secure communication between buses?",
     answer: <>Nodes are <strong>authenticated</strong>, communications are <strong>encrypted</strong>, and event packets can be <strong>digitally signed</strong> or integrity-protected. Event IDs and timestamps also help protect against <strong>replay attacks</strong>.</>,
     docs: [
@@ -65,7 +56,7 @@ const qaData = [
     ]
   },
   {
-    id: 8,
+    id: 7,
     question: "What is the expected power consumption of your edge system?",
     answer: <>Power depends on the hardware and inference workload. Raspberry Pi 5 can reach roughly <strong>10–12 W</strong> under demanding board workloads, while Jetson Orin Nano provides <strong>configurable power modes</strong> depending on configuration.</>,
     docs: [
@@ -74,7 +65,7 @@ const qaData = [
     ]
   },
   {
-    id: 9,
+    id: 8,
     question: "Why did you choose YOLO for this project?",
     answer: <>Our use case requires <strong>real-time object and road-event detection</strong> on edge hardware. YOLO provides a practical <strong>balance between detection accuracy, inference speed, and deployment complexity</strong>.</>,
     docs: [
@@ -82,11 +73,20 @@ const qaData = [
     ]
   },
   {
-    id: 10,
+    id: 9,
     question: "What metrics will you use to prove your AI model is performing well?",
     answer: <>We evaluate using <strong>precision, recall, F1-score and mAP</strong>, rather than reporting accuracy alone. We also measure <strong>inference latency/FPS</strong> because this is a real-time edge application.</>,
     docs: [
       { name: "Ultralytics — YOLO Performance Metrics", link: "https://docs.ultralytics.com/tasks/detect/" }
+    ]
+  },
+  {
+    id: 10,
+    question: "Wi-Fi Aware is not actually a mesh protocol. Then why are you calling your system Urban Swarm Mesh?",
+    answer: <>Wi-Fi Aware provides <strong>peer discovery</strong> and <strong>direct P2P communication</strong>. Our application layer implements the <strong>mesh behaviour</strong>—peer selection, forwarding, deduplication, store-carry-forward, and gateway selection.</>,
+    docs: [
+      { name: "Android Developers — Wi-Fi Aware", link: "https://developer.android.com/develop/connectivity/wifi/wifi-aware" },
+      { name: "IETF RFC 9171 — Bundle Protocol / DTN", link: "https://www.rfc-editor.org/rfc/rfc9171.html" }
     ]
   },
   {
